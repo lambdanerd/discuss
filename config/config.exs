@@ -21,20 +21,19 @@ config :logger, :console,
   format: "$time $metadata[$level] $message\n",
   metadata: [:request_id]
 
-# TODO: Add facebook: {Ueberauth.Strategy.Facebook, []}
 config :ueberauth, Ueberauth,
   providers: [
-    github: {Ueberauth.Strategy.Github, []}
+    github: {Ueberauth.Strategy.Github, []},
+    facebook: {Ueberauth.Strategy.Facebook, []}
   ]
 
 config :ueberauth, Ueberauth.Strategy.Github.OAuth,
   client_id: System.get_env("GITHUB_CLIENT_ID"),
   client_secret: System.get_env("GITHUB_CLIENT_SECRET")
 
-# TODO: Use this when we add the facebook strategy
-# config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
-#   client_id: System.get_env("FACEBOOK_CLIENT_ID"),
-#   client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")
+config :ueberauth, Ueberauth.Strategy.Facebook.OAuth,
+  client_id: System.get_env("FACEBOOK_CLIENT_ID"),
+  client_secret: System.get_env("FACEBOOK_CLIENT_SECRET")
 
 # Import environment specific config. This must remain at the bottom
 # of this file so it overrides the configuration defined above.
