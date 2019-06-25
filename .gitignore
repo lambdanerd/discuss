@@ -27,3 +27,6 @@ erl_crash.dump
 
 # ElixirLS extension in vscode
 /.elixir_ls
+
+# I'm taking notes 🤫
+notes.ex
