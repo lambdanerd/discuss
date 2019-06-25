@@ -1,0 +1,29 @@
+<div class="section">
+  <div class="row">
+    <div class="col s12 m12 xl8 offset-xl2">
+      <h4>Topics</h4>
+
+      <ul class="collection">
+        <%= for topic <- @topics do %>
+          <li class="collection-item">
+            <%= topic.title %>
+            <div class="secondary-content">
+              <%= link(to: topic_path(@conn, :edit, topic.id)) do %>
+                <i class="tiny material-icons">edit</i>
+              <% end %>
+              <%= link(to: topic_path(@conn, :delete, topic.id), method: :delete) do %>
+                <i class="tiny material-icons">delete</i>
+              <% end %>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+
+      <div class="fixed-action-class right">
+        <%= link to: topic_path(@conn, :new), class: "btn-floating btn-large waves-effect waves-light red" do %>
+          <i class="material-icons">add</i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
