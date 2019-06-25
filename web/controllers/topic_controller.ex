@@ -2,9 +2,11 @@ defmodule Discuss.TopicController do
   use Discuss.Web, :controller
 
   def index(conn, _params) do
-    topics = Repo.all(Discuss.Topic)
-    |> Enum.sort()
-    render conn, "index.html", topics: topics
+    topics =
+      Repo.all(Discuss.Topic)
+      |> Enum.sort()
+
+    render(conn, "index.html", topics: topics)
   end
 
   def new(conn, _params) do
@@ -12,7 +14,7 @@ defmodule Discuss.TopicController do
     render(conn, "new.html", changeset: changeset)
   end
 
-  def create(conn,  %{"topic" => topic}) do
+  def create(conn, %{"topic" => topic}) do
     changeset = Discuss.Topic.changeset(%Discuss.Topic{}, topic)
 
     case Repo.insert(changeset) do
@@ -20,14 +22,17 @@ defmodule Discuss.TopicController do
         conn
         |> put_flash(:info, "Topic Created")
         |> redirect(to: topic_path(conn, :index))
+
       {:error, changeset} ->
         render(conn, "new.html", changeset: changeset)
     end
   end
 
   def edit(conn, %{"id" => topic_id}) do
-    changeset = Repo.get(Discuss.Topic, topic_id)
-    |> Discuss.Topic.changeset()
+    changeset =
+      Repo.get(Discuss.Topic, topic_id)
+      |> Discuss.Topic.changeset()
+
     render(conn, "edit.html", changeset: changeset, topic_id: topic_id)
   end
 
@@ -40,6 +45,7 @@ defmodule Discuss.TopicController do
         conn
         |> put_flash(:info, "Topic Updated")
         |> redirect(to: topic_path(conn, :index))
+
       {:error, changeset} ->
         conn
         |> render("edit.html", changeset: changeset, topic_id: topic_id)
