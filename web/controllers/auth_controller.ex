@@ -3,7 +3,7 @@ defmodule Discuss.AuthController do
   plug(Ueberauth)
 
   def callback(conn, params) do
-    IO.puts(conn.assigns)
-    IO.puts(params)
+    IO.inspect(conn.assigns)
+    IO.inspect(params)
   end
 end
