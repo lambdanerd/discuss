@@ -32,8 +32,7 @@ defmodule Discuss.Mixfile do
         :postgrex,
         :envy,
         :ueberauth,
-        :ueberauth_github,
-        :ueberauth_facebook
+        :ueberauth_github
       ]
     ]
   end
@@ -57,8 +56,7 @@ defmodule Discuss.Mixfile do
       {:cowboy, "~> 1.0"},
       {:envy, "~> 1.1.1"},
       {:ueberauth, "~> 0.3"},
-      {:ueberauth_github, "~> 0.4"},
-      {:ueberauth_facebook, "~> 0.8"}
+      {:ueberauth_github, "~> 0.4"}
     ]
   end
 

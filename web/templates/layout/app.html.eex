@@ -23,11 +23,6 @@
               Login with GitHub
             <% end %>
           </li>
-          <li>
-            <%= link(to: auth_path(@conn, :request, "facebook")) do %>
-              Login with Facebook
-            <% end %>
-          </li>
       </ul>
       </div>
     </nav>
