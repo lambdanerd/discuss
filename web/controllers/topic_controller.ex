@@ -59,8 +59,4 @@ defmodule Discuss.TopicController do
     |> put_flash(:info, "Topic Deleted")
     |> redirect(to: topic_path(conn, :index))
   end
-
-  def show(conn, params) do
-    # ...
-  end
 end
