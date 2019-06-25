@@ -30,7 +30,9 @@ defmodule Discuss.Mixfile do
         :gettext,
         :phoenix_ecto,
         :postgrex,
-        :envy
+        :envy,
+        :ueberauth,
+        :ueberauth_github
       ]
     ]
   end
@@ -52,7 +54,9 @@ defmodule Discuss.Mixfile do
       {:phoenix_live_reload, "~> 1.0", only: :dev},
       {:gettext, "~> 0.11"},
       {:cowboy, "~> 1.0"},
-      {:envy, "~> 1.1.1"}
+      {:envy, "~> 1.1.1"},
+      {:ueberauth, "~> 0.3"},
+      {:ueberauth_github, "~> 0.4"}
     ]
   end
 
