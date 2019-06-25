@@ -24,3 +24,6 @@ erl_crash.dump
 /config/prod.secret.exs
 /config/application.yml
 .env
+
+# ElixirLS extension in vscode
+/.elixir_ls
