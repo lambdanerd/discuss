@@ -18,11 +18,15 @@
       <div class="nav-wrapper container">
         <a href="/" class="brand-logo">Discussions</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li>
-            <%= link(to: auth_path(@conn, :request, "github")) do %>
-              Login with GitHub
-            <% end %>
-          </li>
+          <% if @conn.assigns[:user] do %>
+            <li>
+              Logout
+            </li>
+          <% else %>
+            <li>
+              <%= link("Login with GitHub", to: auth_path(@conn, :request, "github")) %>
+            </li>
+          <% end %>
       </ul>
       </div>
     </nav>
