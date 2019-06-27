@@ -1,4 +1,4 @@
-defmodule Dicuss.CommentsChannel do
+defmodule Discuss.CommentsChannel do
   use Discuss.Web, :channel
 
   def join(), do: nil
