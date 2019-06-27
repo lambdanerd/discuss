@@ -3,5 +3,5 @@ defmodule Dicuss.CommentsChannel do
 
   def join(), do: nil
 
-  def hand_in(), do: nil
+  def handle_in(), do: nil
 end
