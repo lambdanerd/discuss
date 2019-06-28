@@ -3,7 +3,7 @@ defmodule Discuss.CommentsChannel do
 
   def join("comments:" <> topic_id, _params, socket) do
     topic =
-      Disucss.Topic
+      Discuss.Topic
       |> Repo.get(String.to_integer(topic_id))
 
     {:ok, %{}, socket}
