@@ -1,7 +1,11 @@
 defmodule Discuss.CommentsChannel do
   use Discuss.Web, :channel
 
-  def join(), do: nil
+  def join(name, _params, socket) do
+    {:ok, %{}, socket}
+  end
 
-  def handle_in(), do: nil
+  def handle_in(name, message, socket) do
+    {:reply, :ok, socket}
+  end
 end
