@@ -1,7 +1,11 @@
 defmodule Discuss.CommentsChannel do
   use Discuss.Web, :channel
 
-  def join(name, _params, socket) do
+  def join("comments:" <> topic_id, _params, socket) do
+    topic =
+      Disucss.Topic
+      |> Repo.get(String.to_integer(topic_id))
+
     {:ok, %{}, socket}
   end
 
